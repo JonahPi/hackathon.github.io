@@ -24,7 +24,7 @@
     <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
 </head>
 <body>
-    <h1>Willkommen auf der Startseite QR2</h1>
+    <h1>Willkommen auf der Startseite QR3</h1>
     <img src="https://via.placeholder.com/300" alt="Beispielbild">
     <p>Dies ist ein Beispielabsatz. Bitte geben Sie den 5-stelligen Code ein oder scannen Sie den QR-Code, um fortzufahren.</p>
     <input type="text" id="codeInput" placeholder="5-stelliger Code">
@@ -60,8 +60,10 @@
 
         function startScan() {
             document.getElementById('reader').style.display = 'block';
-            html5QrcodeScanner = new Html5QrcodeScanner(
-                "reader", { fps: 10, qrbox: 250 });
+            if (!html5QrcodeScanner) {
+                html5QrcodeScanner = new Html5QrcodeScanner(
+                    "reader", { fps: 10, qrbox: 250 });
+            }
             html5QrcodeScanner.render(onScanSuccess, onScanFailure);
         }
     </script>
