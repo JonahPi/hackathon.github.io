@@ -1,7 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+        }
+        input[type="button"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <h1>Willkommen auf der Startseite</h1>
+    <img src="https://via.placeholder.com/300" alt="Beispielbild">
+    <p>Dies ist ein Beispielabsatz. Bitte geben Sie den 5-stelligen Code ein, um fortzufahren.</p>
+    <input type="text" id="codeInput" placeholder="5-stelliger Code">
+    <input type="button" value="Weiter" onclick="checkCode()">
+    <script>
+        function checkCode() {
+            var code = document.getElementById('codeInput').value;
+            if (code === "12345") {
+                window.location.href = 'second-page.html';
+            } else {
+                alert('Falscher Code. Bitte versuchen Sie es erneut.');
+            }
+        }
+    </script>
 </body>
 </html>
